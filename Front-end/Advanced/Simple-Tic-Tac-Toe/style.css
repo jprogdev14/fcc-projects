@@ -1,0 +1,53 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header, footer {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+footer #reset-btn{
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+#token-select, #game {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+}
+
+#token-select, #game table {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#token-select table tr td {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+}
+
+#game table tr td {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+}
+

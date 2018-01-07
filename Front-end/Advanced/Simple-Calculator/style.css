@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    height: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+#calculator {
+    background-color: black;
+    width: 300px;
+    height: 270px;
+    margin: 5% auto;
+}
+
+#calculator #screen {
+    background-color: #597DB1;
+    padding: 3px;
+    font-size: 30px;
+    text-align: right;
+}
+
+#calculator #screen p {
+    margin: 0;
+}
+
+#calculator #operations {
+    width: 100%;
+    height: 100%;
+}
+
+#calculator #operations table tr .btn {
+    background-color: #BCBCBC;
+    font-size: 30px;
+    width: 75px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}

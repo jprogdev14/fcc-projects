@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+#main-search {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    #main-search {
+      width: 30%;
+      margin: 15% auto 15% auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #main-search {
+      width: 90%;
+      margin: 15% auto 15% auto;
+    }
+}
+
+#main-search h1 {
+  font-family: "Roboto";
+}
+
+#main-search .search-form {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+}
+
+#main-search .search-form #main-search-input {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 5px;
+  width: 100%;
+}
+
+#main-search .search-form #main-search-submit {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+#main-lucky-submit, #main-random-submit {
+  background-color: #c1c1c1;
+  border: 2px solid #999999;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  #main-lucky-submit, #main-random-submit {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main-lucky-submit, #main-random-submit {
+    width: 45%;
+  }
+}
+
+
+#search-page {
+  width: 100%;
+  padding: 0;
+}
+
+@media screen and (min-width: 460px) {
+
+  #search-page #search-page-top {
+    background-color: #e5d9a9;
+  }
+
+  #search-page #search-page-top ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #search-page #search-page-top ul li {
+    display: inline-block;
+  }
+
+  #search-page #search-page-top h3 {
+    margin: 20px 30px;
+  }
+
+  #search-page #search-page-top .search-form {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+  }
+
+  #search-page #search-page-top .search-form #search-page-input {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    width: 100%;
+  }
+
+  #search-page #search-page-top .search-form #search-page-submit {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 460px) {
+
+  #search-page #search-page-top {
+    background-color: #e5d9a9;
+    height: 120px;
+  }
+
+  #search-page #search-page-top ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #search-page #search-page-top ul li {
+    display: inline-block;
+  }
+
+  #search-page #search-page-top h3 {
+    margin: 40px 30px 10px 30px;
+  }
+
+  #search-page #search-page-top .search-form {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    margin-left: 20px;
+  }
+
+  #search-page #search-page-top .search-form #search-page-input {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    width: 100%;
+  }
+
+  #search-page #search-page-top .search-form #search-page-submit {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+#search-page #search-page-body {
+  margin: 50px;
+  height: 2800px;
+}
+
+#search-page #search-page-body .search-box {
+  width: 100%;
+  padding: 3px 10px 10px 10px;
+  margin-bottom: 30px;
+}
+
+#search-page #search-num {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+  font-size: 30px;
+  cursor: pointer;
+}

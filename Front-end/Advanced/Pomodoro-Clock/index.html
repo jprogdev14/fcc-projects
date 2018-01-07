@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Pomodoro Clock</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            header {
+                text-align: center;
+            }
+
+            #wrapper {
+                width: 300px;
+                height: 300px;
+                margin: 10% auto 0 auto;
+                text-align: center;
+            }
+
+            #wrapper h2 {
+                text-align: center;
+                font-size: 40px;
+            }
+
+            #wrapper .box-wrap {
+                display: inline-block;
+                text-align: center;
+                margin-left: 5%;
+            }
+
+            #wrapper button {
+                
+                margin-top: 10%;
+            }
+
+            footer {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Simple Pomodoro Clock</h1>
+        </header>
+
+        <div id="wrapper">
+            <h2><span id="mm">00</span>:<span id="ss">00</span></h2>
+            <div class="box-wrap">
+                <h3>Session Length</h3>
+                <select id="session" size="1">
+                    <option value="1">1</option>
+                </select>
+            </div>
+
+            <div class="box-wrap">
+                <h3>Break Length</h3>
+                <select id="break" size="1">
+                    <option value="1">1</option>
+                </select>
+            </div>
+            
+            <button id="startBtn">Start</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+
+        <footer>
+            <p>Developed By James Viviers</p>
+        </footer>
+
+        <audio id="audio">
+            <source src="ping.mp3" type="audio/mpeg" />
+        </audio>
+
+        <script>
+            var sessionEl = document.getElementById("session");
+            var breakEl = document.getElementById("break");
+
+            var minuteEl = document.getElementById("mm");
+            var secondEl = document.getElementById("ss");
+
+            var startBtn = document.getElementById("startBtn");
+            var resetBtn = document.getElementById("resetBtn");
+
+            var audioEl = document.getElementById("audio");
+
+            var timer = null;
+
+            //Append Select Elements with more option values and set optional default
+            function appendOptions(element, start, end, defaultVal) {
+
+                defaultVal = defaultVal || 2;
+
+                for(var i = start; i <= end; i++) {
+                    var optionEl = document.createElement("option");
+                    optionEl.setAttribute("value", i);
+
+
+                    if(i === defaultVal) {
+                        optionEl.setAttribute("selected", "selected");
+                    }
+
+                    optionEl.innerHTML = i;
+                    element.appendChild(optionEl);
+                }
+            }
+
+            appendOptions(sessionEl, 2, 60, 25);
+            appendOptions(breakEl, 2, 60, 5);
+
+            //Start timer
+            function start() {
+                //Get the length for both session and break intervals
+                var session_length = sessionEl.options[sessionEl.selectedIndex].value;
+                var break_length = breakEl.options[breakEl.selectedIndex].value;
+
+                var minutes = session_length;
+                var seconds = 0;
+
+                //Disable session and break select elements
+                sessionEl.disabled = true;
+                breakEl.disabled = true;
+
+                var break_interval = 0;
+                timer = setInterval(function() {
+
+                    //If seconds is smaller than 1, substract 1 value from minute and set seconds to 60
+                    if(seconds < 1) {
+                        minutes--;
+                        seconds = 60;
+                    }
+
+                    //If minutes are less than 0, and the break interval cannot be divided by two
+                    //Set the minutes value to the break length
+                    //Else set it to the session length
+                    if(minutes < 0) {
+                        break_interval++;
+
+                        if(break_interval % 2 > 0) {
+                            minutes = break_length - 1;
+                        } else {
+                            minutes = session_length - 1;
+                        }
+
+                        //Play a ping sound to alert end of current interval
+                        audioEl.play();
+                    }
+
+                    seconds--;
+
+                    //If minutes or seconds are less than 10, add a 'zero' character infront of the value
+                    if(minutes < 10) {
+                        minuteEl.innerHTML = String("0" + minutes);
+                    } else {
+                        minuteEl.innerHTML = minutes;
+                    }
+                    
+                    if(seconds < 10) {
+                        secondEl.innerHTML = String("0" + seconds);
+                    } else {
+                        secondEl.innerHTML = seconds;
+                    }
+                    
+                }, 1000);
+            }
+
+            //Reset the pomodoro clock
+            function reset() {
+                clearInterval(timer);
+                sessionEl.disabled = false;
+                breakEl.disabled = false;
+
+                minuteEl.innerHTML = "00";
+                secondEl.innerHTML = "00";
+            }
+
+            startBtn.addEventListener("click", function() {
+                start();
+                this.disabled = true;
+            });
+
+            resetBtn.addEventListener("click", function() {
+                reset();
+                startBtn.disabled = false;
+            });
+        </script>
+    </body>
+</html>

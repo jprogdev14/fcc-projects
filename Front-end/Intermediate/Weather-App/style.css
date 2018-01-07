@@ -1,0 +1,65 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat";
+  background-color: #4286f4;
+}
+
+header {
+  margin-top: 3%;
+  text-align: center;
+}
+
+header h1 {
+  font-family: "Fjalla One";
+  font-size: 50px;
+}
+
+#loading {
+  text-align: center;
+}
+
+#weather-portal {
+  text-align: center;
+  width: 100%;
+  margin: 3% auto;
+}
+
+#weather-portal img {
+  width: 150px;
+}
+
+#weather-portal ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#weather-portal ul li {
+  margin: 0 5px;
+  display: inline;
+}
+
+#weather-portal #curWeatherDeg p {
+  margin: 0 5px;
+  display: inline;
+}
+
+#weather-week {
+  text-align: center;
+  width: 100%;
+  margin: 5% auto;
+}
+
+#weather-week ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#weather-week ul li {
+  display: inline-block;
+  padding: 20px;
+}
+
+#weather-week ul li img {
+  display: inline;
+}

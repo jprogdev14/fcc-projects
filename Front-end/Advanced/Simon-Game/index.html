@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simon - Developed By James Viviers</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <audio>
+            <source src="media/simonSound1.mp3" type="audio/mpeg" />
+        </audio>
+        <audio>
+            <source src="media/simonSound2.mp3" type="audio/mpeg" />
+        </audio>
+        <audio>
+            <source src="media/simonSound3.mp3" type="audio/mpeg" />
+        </audio>
+        <audio>
+            <source src="media/simonSound4.mp3" type="audio/mpeg" />
+        </audio>
+
+        <div id="simon-board">
+            <div id="green-btn"></div>
+            <div id="red-btn"></div>
+            <div id="yellow-btn"></div>
+            <div id="blue-btn"></div>
+            
+            <div id="simon-control">    
+                <div id="logo">
+                    <h1>SIMON</h1>
+                </div>
+
+                <div id="simon-btn">
+                    <div id="start-btn"></div>
+                    <p>Start</p>
+                </div>
+
+                <div id="simon-btn">
+                    <div id="strict-btn"></div>
+                    <p>Strict</p>
+                </div>
+
+                <div id="counter">
+                    <p></p>
+                </div>
+
+                <div id="simon-switch">
+                    <div id="simon-back-switch">
+                        <div id="simon-front-switch"></div>
+                    </div>
+                    <p>ON|OFF</p>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="app.js"></script>
+</html>

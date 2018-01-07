@@ -1,0 +1,186 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Yanone+Kaffeesatz" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <style>
+
+    body {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header h1 {
+      font-family: 'Lobster';
+      font-size: 50px;
+    }
+
+    #quote-box {
+      background-color: #d6d6d6;
+      border-radius: 10px;
+      width: 50%;
+      height: 350px;
+      padding: 10px;
+      margin: 4% auto 0 auto;
+    }
+
+    #quote-box #quote-text {
+      width: 95%;
+      height: 70%;
+      margin-top: 10%;
+    }
+
+    #quote-box #quote-text h2 {
+      font-family: 'Yanone Kaffeesatz';
+      /*calc((var(--min-size) * 1px) + var(--diff) * ((100vw - 420px) / (1200 - 420))); Ranges from 421px to 1199px */
+      font-size: 3vw;
+      padding: 0;
+      margin: 0;
+
+    }
+
+    #quote-box #quote-text h3 {
+      font-family: 'Josefin Sans';
+      font-size: 1.7vw
+    }
+
+    #quote-box #quote-control button {
+      background-color: white;
+      color: black;
+      border: 1px solid white;
+      border-radius: 10px 0;
+      width: 100px;
+      font-size: 20px;
+      margin-right: 30px;
+      margin-bottom: 30px;
+      cursor: pointer;
+    }
+
+    #quote-box #quote-control button:focus {
+      outline: 0;
+    }
+
+    footer {
+      margin-top: 4%;
+    }
+
+    footer p {
+      font-family: arial;
+      font-size: 20px;
+    }
+
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    footer ul li {
+      display: inline;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+  </style>
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Random Quote Generator</h1>
+  </header>
+
+  <div id="quote-box">
+    <div id="quote-text">
+      <h2></h2>
+      <h3></h3>
+    </div>
+    <div id="quote-control">
+      <button id="tweet">Tweet <i class="fa fa-twitter"></i></button>
+      <button id="next">Next</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Developed by James Viviers.
+    </p>
+    <ul>
+      <li onclick="window.open('https://github.com/jprogdev14')"><i class="fa fa-github-square"></i></li>
+      <li onclick="window.open('https://linkedin.com/in/james-viviers-667490141/')"><i class="fa fa-linkedin-square"></i></li>
+    </ul>
+  </footer>
+  <script>
+    //Get DOM
+    var headTextEl = document.getElementsByTagName("h1")[0];
+    var quoteTextEl = document.getElementsByTagName("h2")[0];
+    var quoteAuthorEl = document.getElementsByTagName("h3")[0];
+    var developEl = document.getElementsByTagName("p")[0];
+    var githubEl = document.getElementsByTagName("li")[0];
+    var linkedinEl = document.getElementsByTagName("li")[1];
+
+    var tweetBtn = document.getElementById("tweet");
+    var nextBtn = document.getElementById("next");
+
+
+    //Tweet Quote
+    var tweetUrl = "https://twitter.com/intent/tweet?text=";
+    function tweetQuote(text, author) {
+      var link = tweetUrl + text + author
+      window.open(link);
+    }
+
+    //Get Quote;
+    var formaticUrl = "https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en";
+    function getQuote() {
+      $.getJSON(formaticUrl, function(data) {
+        var quote = data.quoteText;
+        var author = data.quoteAuthor;
+
+        $("#quote-text").animate({opacity: 0}, function() {
+          quoteTextEl.innerHTML = quote;
+          quoteAuthorEl.innerHTML = " - " + author;
+          setTimeout(function() {
+            randomBackground();
+            $("#quote-text").animate({opacity: 1});
+          }, 1000);
+        })
+
+      });
+    }
+
+    //Change color
+    function randomBackground() {
+      var r = Math.floor(Math.random() * 255);
+      var g = Math.floor(Math.random() * 255);
+      var b = Math.floor(Math.random() * 255);
+
+      //If the background color becomes dark, change text color to white and vise versa
+      if(r <= 124 || g <= 124 || b <= 124 ) {
+        headTextEl.style.color = "white";
+        quoteTextEl.style.color = "white";
+        quoteAuthorEl.style.color = "white";
+        developEl.style.color = "white";
+        githubEl.style.color = "white";
+        linkedinEl.style.color = "white";
+      } else {
+        headTextEl.style.color = "black";
+        quoteTextEl.style.color = "black";
+        quoteAuthorEl.style.color = "black";
+        developEl.style.color = "black";
+        githubEl.style.color = "black";
+        linkedinEl.style.color = "black";
+      }
+
+      $("body").animate({backgroundColor: "rgb("+r+","+g+","+b+")"}, "slow");
+    }
+
+    tweetBtn.onclick = function() {
+      tweetQuote(quoteTextEl.textContent, quoteAuthorEl.textContent);
+    }
+    nextBtn.onclick = function() {
+      getQuote();
+    }
+    getQuote();
+
+  </script>
+</body>

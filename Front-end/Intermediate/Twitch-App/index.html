@@ -1,0 +1,36 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Twitch.tv App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Indie+Flower" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+        <h1>TWITCH.TV APP</h1>
+        <p>Part of the FreeCodeCamp Intermediate Projects List</p>
+    </header>
+
+    <div id="streamers"></div>
+
+    <footer>
+      <p>Developed by James Viviers</p>
+      <ul>
+        <li onclick="openPage('https://www.linkedin.com/in/james-viviers-667490141/')"><i class="fa fa-linkedin-square"></i></li>
+        <li onclick="openPage('https://github.com/jprogdev14')"><i class="fa fa-github-square"></i></li>
+      </ul>
+    </footer>
+
+    <script src="jquery.js"></script>
+    <script src="app.js"></script>
+    <script>
+      function openPage(url) {
+        window.open(url);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet"/>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div id="main-search">
+        <h1>WIKIPEDIA SEARCH</h1>
+        <form class="search-form">
+          <input id="main-search-input" type="text" />
+          <button id="main-search-submit" type="button" onclick="searchWiki(FULL_SEARCH_MAIN)"><i class="fa fa-search"></i></button>
+        </form>
+        <button id="main-lucky-submit" onclick="searchWiki(LUCKY_SEARCH)">Feeling Lucky</button>
+        <button id="main-random-submit" onclick="openPage(random_url)">Random</button>
+    </div>
+
+    <div id="search-page">
+      <div id="search-page-top">
+        <ul>
+          <li>
+            <h3>WIKIPEDIA SEARCH</h3>
+          </li>
+          <li>
+            <form class="search-form">
+              <input id="search-page-input" type="text" />
+              <button id="search-page-submit" type="button" onclick="searchWiki(FULL_SEARCH_2)"><i class="fa fa-search"></i></button>
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div id="search-page-body">
+
+      </div>
+    </div>
+
+    <footer>
+      <p>Developed by James Viviers</p>
+      <ul>
+        <li onclick="openPage('https://www.linkedin.com/in/james-viviers-667490141/')"><i class="fa fa-linkedin-square"></i></li>
+        <li onclick="openPage('https://github.com/jprogdev14')"><i class="fa fa-github-square"></i></li>
+      </ul>
+    </footer>
+    <script src="jquery.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

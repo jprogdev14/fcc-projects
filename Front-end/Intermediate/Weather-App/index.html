@@ -1,0 +1,67 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <h1>Weather App</h1>
+    <p>Developed by James Viviers.</p>
+  </header>
+  <div id="loading">
+    <h2>Loading...</h2>
+  </div>
+  <div id="weather-portal">
+    <h2>Current Weather</h2>
+    <h3 id="curWeatherLoc"></h3>
+    <img id="curWeatherIcon" />
+    <h3 id="curWeatherTemp"></h3>
+    <h4 id="curWeatherDesc"></h4>
+    <ul>
+      <li id="curWeatherDate"></li>
+      <li id="curWeatherTime"></li>
+    </ul>
+    <div id="curWeatherDeg">
+      <p>
+        &degC
+        <input id="curWeatherDegC" type="checkbox" onchange="getForecast(CELSIUS)"/>
+      </p>
+      <p>
+        &degF
+        <input id="curWeatherDegF" type="checkbox" onchange="getForecast(FAHRENHEIT)"/>
+      </p>
+    </div>
+  </div>
+
+  <div id="weather-week">
+    <h2>Five-day forecast</h2>
+    <ul>
+      <li>
+        <p id="day1Date"></p>
+        <p><span id="day1Temp1"></span> / <span id="day1Temp2"></span></p>
+        <img id="day1Icon1"><img id="day1Icon2">
+      </li>
+      <li>
+        <p id="day2Date"></p>
+        <p><span id="day2Temp1"></span> / <span id="day2Temp2"></span></p>
+        <img id="day2Icon1"></span><img id="day2Icon2">
+      </li>
+      <li>
+        <p id="day3Date"></p>
+        <p><span id="day3Temp1"></span> / <span id="day3Temp2"></span></p>
+        <img id="day3Icon1"><img id="day3Icon2">
+      </li>
+      <li>
+        <p id="day4Date"></p>
+        <p><span id="day4Temp1"></span> / <span id="day4Temp2"></span></p>
+        <img id="day4Icon1"><img id="day4Icon2">
+      </li>
+      <li>
+        <p id="day5Date"></p>
+        <p><span id="day5Temp1"></span> / <span id="day5Temp2"></span></p>
+        <img id="day5Icon1"><img id="day5Icon2">
+      </li>
+    </ul>
+  </div>
+  <script src="app.js"></script>
+</body>

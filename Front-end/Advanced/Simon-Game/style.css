@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-image: url("media/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: simon;
+    src: url("media/simon.ttf");
+}
+
+@font-face {
+    font-family: simon-text;
+    src: url("media/text.ttf");
+}
+
+@font-face {
+    font-family: simon-lcd;
+    src: url("media/lcd.ttf");
+}
+
+#simon-board {
+    width: 600px;
+    height: 600px;
+    margin: 3% auto;
+    background-color: black;
+    border-radius: 50%;
+}
+
+#simon-board #green-btn, #red-btn, #yellow-btn, #blue-btn {
+    display: inline-block;
+    width: 42%;
+    height: 42%;
+    margin-top: 5%;
+    margin-left: 5%;
+    cursor: pointer;
+}
+
+#simon-board #green-btn {
+    border-radius: 100% 0 0 0;
+    background-color: #005E00;
+}
+
+#simon-board #red-btn {
+    border-radius: 0 100% 0 0;
+    background-color: #870000;
+}
+
+#simon-board #yellow-btn {
+    border-radius: 0 0 0 100%;
+    background-color: #A7A700;
+}
+
+#simon-board #blue-btn {
+    border-radius: 0 0 100% 0;
+    background-color: #00008F;
+}
+
+#simon-board #simon-control {
+    position: relative;
+    width: 35%;
+    height: 35%;
+    left: 29%;
+    bottom: 65%;
+    background-color: white;
+    border: 20px solid black;
+    border-radius: 50%;
+}
+
+#simon-board #simon-control #logo {
+    height: 70px;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    border-radius: 100% 100% 0 0;
+}
+
+#simon-board #simon-control #logo h1 {
+    font-family: simon;
+    font-size: 60px;
+    color: white;
+    margin: 0;
+}
+
+#simon-board #simon-control #simon-btn {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#simon-board #simon-control #simon-btn #start-btn{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 0px 3px 5px black;
+}
+
+#simon-board #simon-control #simon-btn #strict-btn{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-color: yellow;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: 0px 3px 5px black;
+}
+
+#simon-board #simon-control #simon-btn p {
+    margin-top: 2px;
+    font-family: simon-text;
+}
+
+#simon-board #simon-control #counter {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    background-color: #380000;
+    border: 1px solid black;
+    border-radius: 5px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#simon-board #simon-control #counter p {
+    font-family: simon-lcd;
+    font-size: 20px;
+    color: red;
+    margin-top: 10px;
+}
+
+#simon-board #simon-control #simon-switch {
+    margin: 5px auto 0 auto;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+#simon-board #simon-control #simon-switch #simon-back-switch {
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#simon-board #simon-control #simon-switch #simon-back-switch #simon-front-switch {
+    width: 20px;
+    height: 24px;
+    background-color: yellow;
+    float: right;
+    margin-top: 2px;
+    margin-right: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#simon-board #simon-control #simon-switch p {
+    font-family: simon-text;
+    font-size: 13px;
+    margin: 0;
+}
