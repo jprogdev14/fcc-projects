@@ -1,0 +1,1 @@
+A collection of projects made for the FCC Challenges.
