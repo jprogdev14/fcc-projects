@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+header {
+  width: 100%;
+  padding: 1% 0;
+  text-align: center;
+  font-family: 'Oswald';
+  color: #CADF9E;
+  background-color: #595358; }
+  header h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0; }
+  header h2 {
+    font-size: 30px;
+    margin: 0;
+    padding: 0; }

@@ -1,0 +1,19 @@
+@media (min-width: 700px) {
+    .container #previewer {
+        float: left;
+        width: 40%;
+        height: 70vh;
+        margin: 2% 4%;
+        text-align: left;
+        font-family: 'Open Sans';
+    }    
+}
+
+@media (max-width: 699px) {
+    .container #previewer {
+        width: 80%;
+        margin: 2% 4%;
+        text-align: left;
+        font-family: 'Open Sans';
+    }    
+}
