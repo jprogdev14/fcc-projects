@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Async from '../async/async';
-import './leaderboard.css';
+import Async from '../async';
+import style from './leaderboard.css';
 
-class Item extends Component {
+class TableItem extends Component {
     render() {
         return(
             <tr>
@@ -13,58 +13,46 @@ class Item extends Component {
                 <td>{this.props.recent}</td>
                 <td>{this.props.alltime}</td>
             </tr>
-        )
+        );
     }
 }
 
 function showContents(el, type) {
-    Async.getLeaderboard(type, (data) => {
+    Async.getLeaderboard(type, data => {
         el.setState({recent: data}, () => {
             ReactDOM.render(
                 <table>
                     <thead>
-                        <tr>
-                            <th>
-                                Pos
-                            </th>
-                            <th>
-                                Profile
-                            </th>
-                            <th>
-                                Username
-                            </th>
-                            <th onClick={el.showRecent}>
-                                Recent &#8744;
-                            </th>
-                            <th onClick={el.showAllTime}>
-                                All Time &#8744;
-                            </th>
-                        </tr>
+                        <th>#</th>
+                        <th>Profile</th>
+                        <th>Username</th>
+                        <th onClick={el.showRecent}>Recent &#8744;</th>
+                        <th onClick={el.showAllTime}>All Time &#8744;</th>
                     </thead>
                     <tbody>
                     {
                         data.map((item, i) => {
-                           return(
-                               <Item 
+                            return(
+                                <TableItem 
                                     key={String(i)}
                                     position={`#${i+1}`}
                                     img={item.img}
                                     username={item.username}
                                     recent={item.recent}
                                     alltime={item.alltime}
-                               />
-                           );         
+                                />
+                            );
                         })
                     }
                     </tbody>
                 </table>,
                 document.getElementById('leaderboard')
-            )
+            ) 
         });
     });
 }
 
-class Leaderboard extends Component {
+export default class Leaderboard extends Component {
     constructor(props) {
         super(props);
 
@@ -78,15 +66,15 @@ class Leaderboard extends Component {
     }
 
     componentDidMount() {
-        showContents(this, Async.RECENT);
+        showContents(this, Async.recent);
     }
 
     showRecent() {
-        showContents(this, Async.RECENT);
+        showContents(this, Async.recent);
     }
 
     showAllTime() {
-        showContents(this, Async.ALL_TIME);
+        showContents(this, Async.alltime);
     }
 
     render() {
@@ -95,6 +83,4 @@ class Leaderboard extends Component {
             </div>
         )
     }
-}
-
-export default Leaderboard;
+} 

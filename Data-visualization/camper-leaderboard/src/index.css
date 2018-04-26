@@ -1,13 +1,6 @@
-/* FONT REFERENCE */
-@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 
-/* COLOR REFERENCE:
-    FCC BANNER COLOR: #006400
-    FCC PAGE COLOR: #ffffff
-*/
-
-/* REMOVE MARGIN AND PADDING ON HTML, BODY */
 html, body {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }

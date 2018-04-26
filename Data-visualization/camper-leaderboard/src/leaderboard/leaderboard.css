@@ -23,13 +23,13 @@
 
 
 @media (min-width: 600px) {
-    #leaderboard table thead tr th {
-        font-family: 'Oswald';
+    #leaderboard table thead th {
+        font-family: 'Roboto', sans-serif;
         font-size: 20px;
     }
 
     #leaderboard table tbody tr td {
-        font-family: 'Roboto';
+        font-family: 'Open Sans', sans-serif;
         font-size: 20px;
         border: 1px solid black;
     }
@@ -40,13 +40,13 @@
 }
 
 @media (max-width: 600px) {
-    #leaderboard table thead tr th {
-        font-family: 'Oswald';
+    #leaderboard table thead th {
+        font-family: 'Roboto', sans-serif;
         font-size: 10px;
     }
 
     #leaderboard table tbody tr td {
-        font-family: 'Roboto';
+        font-family: 'Open Sans', sans-serif;
         font-size: 10px;
         border: 1px solid black;
     }

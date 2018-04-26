@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './header/header';
 import Leaderboard from './leaderboard/leaderboard';
-import './index.css';
-
+import style from './index.css';
 
 class Wrapper extends Component {
     render() {
@@ -16,7 +15,4 @@ class Wrapper extends Component {
     }
 }
 
-ReactDOM.render(
-    <Wrapper />,
-    document.getElementById('root')
-);
+ReactDOM.render(<Wrapper />, document.getElementById('root'));

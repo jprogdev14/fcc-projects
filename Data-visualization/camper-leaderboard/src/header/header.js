@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './header.css';
+import style from './header.css';
 
 export default class Header extends Component {
     render() {
         return(
             <header>
-                <h1>FreeCodeCamp Leaderboard</h1>
-                <h2>Developed by James Viviers</h2>
+                <h1>Camper Leaderboard</h1>
+                <h2>By James Viviers</h2>
             </header>
-        );
+        )
     }
 }
